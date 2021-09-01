@@ -76,3 +76,4 @@ resource "aws_instance" "spoke1_ec2" {
     instance_type = "t2.micro"
     subnet_id = aviatrix_vpc.default.subnets[0].subnet_id
 }
+#change
