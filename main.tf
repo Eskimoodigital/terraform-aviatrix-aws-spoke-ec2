@@ -69,3 +69,10 @@ resource "aviatrix_transit_firenet_policy" "default" {
   inspected_resource_name      = "SPOKE:${aviatrix_spoke_gateway.default.gw_name}"
   depends_on                   = [aviatrix_spoke_transit_attachment.default] #Let's make sure this cannot create a race condition
 }
+
+
+resource "aws_instance" "spoke1_ec2" {
+    ami = "ami-00f22f6155d6d92c5"
+    instance_type = "t2.micro"
+    subnet_id = module.spoke_aws_1.aviatrix_vpc.default[0].private_subnets.subnet_id
+}
