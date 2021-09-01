@@ -83,6 +83,7 @@ resource "aws_instance" "spoke1_ec2" {
 
 resource "aws_security_group" "instance" {
     name = "terraform-example-instance"
+    vpc_id = aviatrix_vpc.default[0].vpc_id
 
     ingress {
         from_port = 22
