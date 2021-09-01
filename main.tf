@@ -74,5 +74,5 @@ resource "aviatrix_transit_firenet_policy" "default" {
 resource "aws_instance" "spoke1_ec2" {
     ami = "ami-00f22f6155d6d92c5"
     instance_type = "t2.micro"
-    subnet_id = aviatrix_vpc[0].default.subnets[0].subnet_id
+    subnet_id = aviatrix_vpc.default[0].subnets[0].subnet_id
 }
