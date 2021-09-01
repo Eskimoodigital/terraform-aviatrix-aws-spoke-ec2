@@ -1,4 +1,4 @@
-# terraform-aviatrix-aws-spoke
+# Modified to add EC2 instance: terraform-aviatrix-aws-spoke
 
 ### Description
 This module deploys a very simple spoke VPC, with a public and a private subnet in each availability zone. Spoke gateways are created in the public subnets of the 2 first AZ's.
