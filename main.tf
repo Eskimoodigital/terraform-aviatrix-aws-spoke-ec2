@@ -78,6 +78,10 @@ resource "aws_instance" "spoke1_ec2" {
     vpc_security_group_ids = [aws_security_group.instance.id]
     key_name = "KP_AVI_EC2_SPOKE"
     associate_public_ip_address = true
+
+    tags = {
+    Name = local.ec2_name
+  }
 }
 
 #define AWS resources

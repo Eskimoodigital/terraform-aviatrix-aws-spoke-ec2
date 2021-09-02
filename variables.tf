@@ -250,4 +250,6 @@ locals {
   insane_mode_az    = var.insane_mode ? "${var.region}${var.az1}" : null
   ha_insane_mode_az = var.insane_mode ? "${var.region}${var.az2}" : null
   cloud_type        = var.china ? 1024 : (var.gov ? 256 : 1)
+  ec2_name          = "${local.ec2_prefix}${local.lower_name}"
+  ec2_prefix        = "ec2"
 }
