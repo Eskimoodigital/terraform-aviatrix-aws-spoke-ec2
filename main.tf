@@ -76,7 +76,7 @@ resource "aws_instance" "spoke1_ec2" {
     instance_type = "t2.micro"
     subnet_id = aviatrix_vpc.default[0].subnets[2].subnet_id
     vpc_security_group_ids = [aws_security_group.instance.id]
-    key_name = "KP_ESK_EC2_INST1"
+    key_name = "KP_AVI_EC2_SPOKE"
     associate_public_ip_address = true
 }
 
