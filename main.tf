@@ -72,7 +72,7 @@ resource "aviatrix_transit_firenet_policy" "default" {
 
 
 resource "aws_instance" "spoke1_ec2" {
-    ami = "ami-00f22f6155d6d92c5"
+    ami = var.ec2_ami
     instance_type = "t2.micro"
     subnet_id = aviatrix_vpc.default[0].subnets[2].subnet_id
     vpc_security_group_ids = [aws_security_group.instance.id]
@@ -96,6 +96,14 @@ resource "aws_security_group" "instance" {
         protocol = "tcp"
         cidr_blocks = ["0.0.0.0/0"]
     }
+
+    ingress {
+        from_port = 443
+        to_port = 443
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
     ingress {
         from_port = -1
         to_port = -1

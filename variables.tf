@@ -236,6 +236,12 @@ variable "inspection" {
   default     = false
 }
 
+variable "ec2_ami" {
+  description = "ami image for the bastion hosts"
+  type        = string
+  default     = "ami-00f22f6155d6d92c5"
+}
+
 locals {
   lower_name        = replace(lower(var.name), " ", "-")
   prefix            = var.prefix ? "avx-" : ""
