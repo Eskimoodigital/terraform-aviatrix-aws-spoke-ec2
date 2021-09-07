@@ -1,3 +1,8 @@
+variable "ec2_key" {
+  description = "Key for ec2 ssh"
+  type = string
+} 
+
 variable "name" {
   description = "Name for this spoke VPC and it's gateways"
   type        = string
